@@ -1,59 +1,133 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Cardboard Craic
+Phillip Healy's Milestone Project 3: Data-centric full stack site.
+Cardboard Craic is a site for all things boardgame related. Register to leave a review of a game you love or hate, check out news about what's going on in 
+the world of boardgames!
 
-Welcome USER_NAME,
+## Brief
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+### Project purpose: 
 
-## Gitpod Reminders
+In this project, you'll build a full-stack site that allows your users to manage a common dataset about a particular domain. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Value provided: 
 
-`python3 -m http.server`
+Users make use of the site to share their own data with the community, and benefit from having convenient access to the data provided by all other members. 
 
-A blue button should appear to click: _Make Public_,
+The site owner advances their own goals by providing this functionality, potentially by being a regular user themselves. The site owner might also benefit 
+from the collection of the dataset as a whole. 
 
-Another blue button should appear to click: _Open Browser_.
+### Project Requirements 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### Main Technologies 
 
-A blue button should appear to click: _Make Public_,
+- HTML, CSS, JavaScript, Python+Flask, MongoDB 
 
-Another blue button should appear to click: _Open Browser_.
+- Additional libraries and external APIs 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Mandatory Requirements 
 
-To log into the Heroku toolbelt CLI:
+A project violating any of these requirements will FAIL 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+1. Data handling: Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate data records about a particular domain. 
+ If you are considering using a different database, please discuss that with your mentor first and inform Student Care. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+2. Database structure: Put some effort into designing a database structure well-suited for your domain. Make sure to put some thought 
+ into the nesting relationships between records of different entities. 
 
-## Updates Since The Instructional Video
+3. User functionality: Create functionality for users to create, locate, display, edit and delete records (CRUD functionality). 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+4. Use of technologies: Use HTML and custom CSS for the website's front-end. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+5. Structure: Incorporate a main navigation menu and structured layout (you might want to use Materialize or Bootstrap to accomplish this). 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+6. Documentation: Write a README.md file for your project that explains what the project does and the value that it provides to its users. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+7. Version control: Use Git & GitHub for version control. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+8. Attribution: Maintain clear separation between code written by you and code from external sources (e.g. libraries or tutorials). 
+ Attribute any code from external sources to its source via comments above the code and (for larger dependencies) in the README. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+9. Deployment: Deploy the final version of your code to a hosting platform such as Heroku. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+10. Make sure to not include any passwords or secret keys in the project repository. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### Important Notes 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+11. Feel free to reuse the authentication from the mini-project. The focus of this milestone project is on the data, rather than any business logic. 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## UX
 
----
+### User Stories
 
-Happy coding!
+- As an enthusiast I would like to be able to check out Boardgame news.
+- As a hobbyist I want to read reviews before I buy.
+- As a gamer I would like to be able to write my own reviews.
+- As a perfectionist I would like to be able to come back and edit or delete my past reviews. 
+- As a supporter I would like to be able to support the page.
+- As a user I want to be able to register with the site.
+- As a player I want to be able to sort by genre.
+
+Wireframes: 
+
+## Features
+
+### Existing Features
+
+### Future Features
+
+
+## Technologies Used
+
+### Python
+- Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation. 
+ Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code. (https://pythonbasics.org/)
+
+### Flask
+- Flask is a web application framework written in Python. Flask is based on the Werkzeg WSGI toolkit and the Jinja2 template engine. It is a Web 
+Application Framework or a simply a Web Framework represents a collection of libraries and modules. (https://pythonbasics.org/what-is-flask-python/)
+
+### Jinja
+- Jinja2 is one of the most used template engines for Python. It is inspired by Django's templating system but extends it with an expressive language that gives 
+ template authors a more powerful set of tools. (https://www.palletsprojects.com/p/jinja/)
+
+### Werkzeug 
+- Werkzeug is a comprehensive WSGI web application library. It began as a simple collection of various utilities for WSGI applications and has become one of the
+ most advanced WSGI utility libraries. Flask wraps Werkzeug, using it to handle the details 
+ of WSGI while providing more structure and patterns for defining powerful applications. (https://www.palletsprojects.com/p/werkzeug/)
+
+### Bootstrap
+- Bootstrap is the most popular CSS Framework for developing responsive and mobile-first websites. (https://www.w3schools.com/whatis/whatis_bootstrap.asp)
+
+### Balsamiq
+- Balsamiq Wireframes is a rapid low-fidelity UI wireframing tool that reproduces the experience of sketching on a notepad or whiteboard, but using a computer. (https://balsamiq.com/wireframes/)
+
+
+## Testing
+
+### Home Page
+
+### Registration
+
+### Log in/out
+
+### Access Control
+
+### Games
+
+### Genres
+
+### Support
+
+### Bugs Encountered
+
+
+## Deployment
+
+
+## Credits
+
+### Content
+
+### Media
+
+### Acknowledgements
