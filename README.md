@@ -7,14 +7,19 @@ the world of boardgames!
 
 ### Project purpose: 
 
-In this project, you'll build a full-stack site that allows your users to manage a common dataset about a particular domain. 
+In this project, you'll build a full-stack site that allows your users to manage a common dataset about a particular domain (Boardgames). 
 
 ### Value provided: 
 
 Users make use of the site to share their own data with the community, and benefit from having convenient access to the data provided by all other members. 
 
+My users will benefit by being able to share their opinions and experiences, as well as seeing other users expriences and opinions on various boardgames. This can help
+ to guide purchasing or entertain people interested in the hobby.
+
 The site owner advances their own goals by providing this functionality, potentially by being a regular user themselves. The site owner might also benefit 
 from the collection of the dataset as a whole. 
+
+As the site owner I will love reading the users experiences, enjoy writing about my own, and potentially make some money through affiliate links or Patreon.
 
 ### Project Requirements 
 
