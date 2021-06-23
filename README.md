@@ -128,6 +128,43 @@ Application Framework or a simply a Web Framework represents a collection of lib
 
 ## Deployment
 
+1. Create repo "cardboard_craic" on Github based on Code-institute template.
+
+2. Open workspace on Gitpod.
+
+3. Install: updated pip, Flask, flask-pymongo, dnspython.
+
+4. Create environments file env.py, and add this (and pycache) to gitignore for security.
+
+5. create requirements.txt with pip3 freeze, create Procfile.
+
+6. Log into MongoDB, join free cluster.
+
+7. Create database cardboard_craic on free cluster.
+
+8. Create collections on this database: games, genres, users, reviews as per schema.
+
+9. Insert initial documents to these collections to test connectivity etc.
+
+10. Back on Gitpod workspace create app.py and wire it up to the env.py.
+
+11. Create first @app.route("/") and define a test page.
+
+12. Go to Heroku.com and log in.
+
+13. Create app cardboard_craic.
+
+14. Go to Deploy and click deploy via Github. 
+
+15. Put in Github username and repo name, make sure the correct repo opens.
+
+16. Go to settings and click Reveal Config Vars. Add all info from env.py to this as it won't be picked up through Github (gitignore).
+
+17. Back to deploy page click "Automatically deploy from branch: Master".
+
+18. Wait to see this light up green. 
+
+19. You can now "Open App" and will see the test page you created.
 
 ## Credits
 
