@@ -72,7 +72,7 @@ A project violating any of these requirements will FAIL
 - As a user I want to be able to register with the site.
 - As a player I want to be able to sort by genre.
 
-Wireframes: 
+[Wireframes](wireframes/cardboardcraic.pdf)
 
 ## Features
 
@@ -106,6 +106,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ### Balsamiq
 - Balsamiq Wireframes is a rapid low-fidelity UI wireframing tool that reproduces the experience of sketching on a notepad or whiteboard, but using a computer. (https://balsamiq.com/wireframes/)
 
+### Font Awsome
+- Font Awesome is a font and icon toolkit based on CSS and Less. (https://fontawesome.com)
 
 ## Testing
 
