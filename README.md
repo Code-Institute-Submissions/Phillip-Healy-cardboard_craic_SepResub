@@ -72,7 +72,12 @@ A project violating any of these requirements will FAIL
 - As a user I want to be able to register with the site.
 - As a player I want to be able to sort by genre.
 
+### Design
+
 [Wireframes](wireframes/cardboardcraic.pdf)
+
+I chose to have the site be open and clean to have a great user experience. Keeping focus on the content the user has come for, while providing easy navigation
+ to and from every part of the site. I went with a healthy green colour which is traditionally associated with the environment and success.
 
 ## Features
 
@@ -112,7 +117,7 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ## Testing
 
 ### Home Page
-
+- When building the nav bar the logo was overflowing bellow the header with materialize template. 
 ### Registration
 
 ### Log in/out
