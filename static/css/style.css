@@ -18,6 +18,27 @@ main {
     margin-right: 12px;
 }
 
+/* ----------------------------- Back to top button  */
+
+a.back-to-top {
+    display: none;
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+    bottom: 20px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 32px;
+    color: #fff;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+
+
 @media only screen and (max-width: 992px) {
     #mobile-logo {
         left: 15%;
