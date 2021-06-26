@@ -79,6 +79,12 @@ A project violating any of these requirements will FAIL
 I chose to have the site be open and clean to have a great user experience. Keeping focus on the content the user has come for, while providing easy navigation
  to and from every part of the site. I went with a healthy green colour which is traditionally associated with the environment and success.
 
+For the font I chose Poppins; a free Google Font. Poppins is an internationalist take on geometric sans. Each letterform is nearly monolinear, 
+ with optical corrections applied to stroke joints where necessary to maintain an even typographic color. The Devanagari base character height 
+ and the Latin ascender height are equal; Latin capital letters are shorter than the Devanagari characters, and the Latin x-height is set rather high (https://fonts.google.com/specimen/Poppins#about).
+ I found this Font to be clean and clear at all font-weights, which is what I wanted in my consistent vision across the site.
+
+
 ## Features
 
 ### Existing Features
@@ -117,7 +123,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ## Testing
 
 ### Home Page
-- When building the nav bar the logo was overflowing bellow the header with materialize template. 
+- When building the nav bar the logo was overflowing bellow the header with materialize template. This looked sloppy so I applied an id and style to it just for mobile to fix it.
+
 ### Registration
 
 ### Log in/out
