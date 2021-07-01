@@ -37,12 +37,32 @@ a.back-to-top {
 	border-radius: 30px;
 }
 
+/* --------------------------- content adjustments */
 
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    background-color: darkgreen;
+    color: #fff;
+}
+
+#title-pad {
+    padding: 4px
+}
+
+.card-content {
+    min-height: 140px;
+}
 
 @media only screen and (max-width: 992px) {
     #mobile-logo {
         left: 15%;
         -webkit-transform: translateX(0%);
         transform: translateX(0%);
+    }
+
+    #screen_news {
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
     }
 }

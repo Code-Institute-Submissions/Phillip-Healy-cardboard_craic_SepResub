@@ -19,7 +19,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    news = list(mongo.db.news.find())
+    games = list(mongo.db.games.find())
+    return render_template("index.html", news=news, games=games)
 
 
 if __name__ == "__main__":
