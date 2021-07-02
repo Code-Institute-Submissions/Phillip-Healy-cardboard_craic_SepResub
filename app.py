@@ -26,12 +26,6 @@ def index():
     return render_template("index.html", news=news, games=games)
 
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")),
-    debug=True)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -60,10 +54,14 @@ def register():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # gather user info from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    # gather list of reviews by user
+    reviews = list(mongo.db.reviews.find(
+        { "created_by": session["user"]}))
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, reviews=reviews)
 
     return redirect(url_for("login"))
 
@@ -99,3 +97,15 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    #remove user from session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
+if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+    port=int(os.environ.get("PORT")),
+    debug=True)

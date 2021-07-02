@@ -127,7 +127,7 @@ Application Framework or a simply a Web Framework represents a collection of lib
  but this didn't work. Tried changing font color, adding a small background image, also didn't work. 
  I had put in a conflicting position value for the button vs the text, fixing this resolved the issue!
 ### Registration
-
+- continually getting "werkzeug.routing.BuildError: Could not build url for endpoint 'register'. Did you mean 'index' instead?" error. have looked through code on each page as well as app.py. Can't see any errors that would cause this. 
 ### Log in/out
 
 ### Access Control

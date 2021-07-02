@@ -29,7 +29,7 @@
                         <li><a href="#">Categories</a></li>
                         <li><a href="#">News</a></li>
                         {% if session.user %}
-                            <li><a href="#">Log out</a></li>
+                            <li><a href="{{ url_for('logout') }}">Log out</a></li>
                             <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                         {% else %}
                             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -50,7 +50,7 @@
             <li><a href="#">Categories</a></li>
             <li><a href="#">News</a></li>
             {% if session.user %}
-                <li><a href="#">Log out</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
             {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
