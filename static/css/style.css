@@ -57,6 +57,10 @@ a.back-to-top {
     margin-bottom: 50px;
 }
 
+.games {
+    margin-bottom: 15px;
+}
+
 @media only screen and (max-width: 992px) {
     #mobile-logo {
         left: 15%;
