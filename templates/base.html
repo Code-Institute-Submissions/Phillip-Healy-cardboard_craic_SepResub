@@ -21,16 +21,20 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper green darken-2">
-                    <a href="#!" class="brand-logo" id="mobile-logo">Cardboard Craic</a>
+                    <a href="{{ url_for('index') }}" class="brand-logo" id="mobile-logo">Cardboard Craic</a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="# ">Home</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="#">Games</a></li>
                         <li><a href="#">Categories</a></li>
                         <li><a href="#">News</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Log in</a></li>
-                        <li><a href="#">Log out</a></li>
+                        {% if session.user %}
+                            <li><a href="#">Log out</a></li>
+                            <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                            <li><a href="{{ url_for('login') }}">Log in</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
@@ -41,13 +45,17 @@
             <li>
                 <h4 class="center-align green darken-3 white-text">Cardboard Craic</h4>
             </li>
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="#">Games</a></li>
             <li><a href="#">Categories</a></li>
             <li><a href="#">News</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Log in</a></li>
-            <li><a href="#">Log out</a></li>
+            {% if session.user %}
+                <li><a href="#">Log out</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
+            {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Log in</a></li>
+            {% endif %}
         </ul>
 
     </header>

@@ -17,7 +17,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
+@app.route("/index")
 def index():
     news = list(mongo.db.news.find())
     games = list(mongo.db.games.find())
@@ -26,7 +28,7 @@ def index():
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")), 
+    port=int(os.environ.get("PORT")),
     debug=True)
 
 
@@ -36,19 +38,19 @@ def register():
         # check if username already exists in DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         # error flash if they exist
         if existing_user:
             flash("Username already exists, please try again.")
             return redirect(url_for("register"))
-        
+
         # store them in session and update db if they don't already exist
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-    
+
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
@@ -62,7 +64,7 @@ def profile(username):
         {"username": session["user"]})["username"]
     if session["user"]:
         return render_template("profile.html", username=username)
-    
+
     return redirect(url_for("login"))
 
 
@@ -85,7 +87,7 @@ def login():
                         "profile", username=session["user"]))
 
             else:
-                #invalid password
+                # invalid password
                 flash("incorrect username and/or password")
                 return redirect(url_for("login"))
 
@@ -95,3 +97,5 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
