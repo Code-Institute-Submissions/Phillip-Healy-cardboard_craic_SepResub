@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/index")
 def index():
     news = list(mongo.db.news.find())
-    games = list(mongo.db.games.find())
+    games = list(mongo.db.games.find().limit( 3 ))
     return render_template("index.html", news=news, games=games)
 
 
