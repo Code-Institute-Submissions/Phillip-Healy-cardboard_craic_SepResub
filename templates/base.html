@@ -25,7 +25,7 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('index') }}">Home</a></li>
-                        <li><a href="#">Games</a></li>
+                        <li><a href="{{ url_for('games') }}">Games</a></li>
                         <li><a href="#">Categories</a></li>
                         <li><a href="#">News</a></li>
                         {% if session.user %}
@@ -46,7 +46,7 @@
                 <h4 class="center-align green darken-3 white-text">Cardboard Craic</h4>
             </li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="#">Games</a></li>
+            <li><a href="{{ url_for('games') }}">Games</a></li>
             <li><a href="#">Categories</a></li>
             <li><a href="#">News</a></li>
             {% if session.user %}
@@ -66,7 +66,7 @@
         {% if messages %}
         {% for message in messages %}
         <div class="row flashes">
-            <h4 class="center-align teal lighten-2">{{ message }}</h4>
+            <h4 class="center-align green lighten-2">{{ message }}</h4>
         </div>
         {% endfor %}
         {% endif %}

@@ -53,6 +53,10 @@ a.back-to-top {
     min-height: 140px;
 }
 
+#profile-title {
+    margin-bottom: 50px;
+}
+
 @media only screen and (max-width: 992px) {
     #mobile-logo {
         left: 15%;

@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 def index():
     news = list(mongo.db.news.find())
     games = list(mongo.db.games.find().limit( 3 ))
-    return render_template("index.html", news=news, games=games)
+    return render_template("index.html", news=news, games=games, user=user)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -103,6 +103,19 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/delete_review/<review_id>")
+def delete_task(task_id):
+    mongo.db.review.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("profile.html", username=username, reviews=reviews))
+
+
+@app.route("/games")
+def games():
+    games = list(mongo.db.games.find())
+    return render_template("games.html", games=games)
 
 
 if __name__ == "__main__":

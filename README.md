@@ -122,12 +122,9 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ## Testing
 
 ### Home Page
-- When building the nav bar the logo was overflowing bellow the header with materialize template. This looked sloppy so I applied an id and style to it just for mobile to fix it.
-- Created a "back to top" button to appear when user scrolls 30px or more on any page. fontawesome image did not apear in the button. Tried using unicode and importing fontawesome
- but this didn't work. Tried changing font color, adding a small background image, also didn't work. 
- I had put in a conflicting position value for the button vs the text, fixing this resolved the issue!
+
 ### Registration
-- continually getting "werkzeug.routing.BuildError: Could not build url for endpoint 'register'. Did you mean 'index' instead?" error. have looked through code on each page as well as app.py. Can't see any errors that would cause this. 
+
 ### Log in/out
 
 ### Access Control
@@ -139,7 +136,12 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ### Support
 
 ### Bugs Encountered
-
+- When building the nav bar the logo was overflowing bellow the header with materialize template. This looked sloppy so I applied an id and style to it just for mobile to fix it.
+- Created a "back to top" button to appear when user scrolls 30px or more on any page. fontawesome image did not apear in the button. Tried using unicode and importing fontawesome
+ but this didn't work. Tried changing font color, adding a small background image, also didn't work. 
+ I had put in a conflicting position value for the button vs the text, fixing this using an id resolved the issue!
+- continually getting "werkzeug.routing.BuildError: Could not build url for endpoint 'register'. Did you mean 'index' instead?" error. have looked through code on each page as well as app.py. Can't see any errors that would cause this. 
+ Turns out I had my __main__ above the register decorator so it was failing to call.
 
 ## Deployment
 

@@ -12,9 +12,12 @@
                 </div>
                 <!-- spotlight cards -->
                 <div class="row">
-                    <h4 class="center-align green-text text-darken-2">
-                        {{ username.capitalize() }}'s Reviews 
-                    </h4>
+                    <div class="col" id="profile-title">
+                        <h4 class="center-align green-text text-darken-2">
+                            {{ username.capitalize() }}'s Reviews 
+                        </h4>
+                        <hr>
+                    </div>
                     {% for review in reviews %}
                         <div class="col s12 m12">
                             <div class="card">
