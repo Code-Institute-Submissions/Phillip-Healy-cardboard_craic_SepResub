@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    news = list(mongo.db.news.find())
+    news = list(mongo.db.news.find().sort("date", 1).limit( 1 ))
     games = list(mongo.db.games.find().limit( 3 ))
     return render_template("index.html", news=news, games=games)
 
@@ -122,6 +122,12 @@ def games():
 def genres():
     genres = list(mongo.db.genres.find())
     return render_template("genres.html", genres=genres)
+
+
+@app.route("/news")
+def news():
+    news = list(mongo.db.news.find())
+    return render_template("news.html", news=news)
 
 
 if __name__ == "__main__":

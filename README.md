@@ -153,7 +153,9 @@ Application Framework or a simply a Web Framework represents a collection of lib
 - continually getting "werkzeug.routing.BuildError: Could not build url for endpoint 'register'. Did you mean 'index' instead?" error. have looked through code on each page as well as app.py. Can't see any errors that would cause this. 
  Turns out I had my __main__ above the register decorator so it was failing to call.
 - Had the footer on profile page split in a strange way looking sloppy. Found an unclosed div that was causing this.
-
+- Card action links were crowding each other. Align-right class wasn't working, used float: right on a custom class and this tidied it up.
+- Genre titles were overlapping cards above them in mobile view. Applying margin to title card didn't work, possibly as position was offset. Applying just the right margin 
+ to lower card helped space it out nicely.
 
 ## Deployment
 

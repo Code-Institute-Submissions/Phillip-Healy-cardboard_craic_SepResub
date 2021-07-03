@@ -27,7 +27,7 @@
                         <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="{{ url_for('games') }}">Games</a></li>
                         <li><a href="{{ url_for('genres') }}">Genres</a></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href="{{ url_for('news') }}">News</a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('logout') }}">Log out</a></li>
                             <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
@@ -48,7 +48,7 @@
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('games') }}">Games</a></li>
             <li><a href="{{ url_for('genres') }}">Genres</a></li>
-            <li><a href="#">News</a></li>
+            <li><a href="{{ url_for('news') }}">News</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('logout') }}">Log out</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>

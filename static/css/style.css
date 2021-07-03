@@ -51,10 +51,19 @@ a.back-to-top {
 
 .card-content {
     min-height: 140px;
+    margin-bottom: 50px
 }
 
 #profile-title {
     margin-bottom: 50px;
+}
+
+#genre-title {
+    margin-bottom: 50px;
+}
+
+.card-action-right {
+    float: right;
 }
 
 .games {
@@ -72,5 +81,13 @@ a.back-to-top {
         visibility: hidden;
         height: 0px;
         width: 0px;
+    }
+
+    .card-action-right {
+        float: clear;
+    }
+
+    .card-action {
+        text-align: center;
     }
 }

@@ -3,23 +3,23 @@
     
     <div class="container">
         <div class="row">
-            <div class="col s12 m12" id="genre-title">
+            <div class="col s12 m12" id="news-title">
                 <h2 class="center-align green-text text-darken-2">
                     All Genres
                 </h2>
                 <hr>
             </div>
              <!-- genre cards -->
-            {% for genre in genres %}
+            {% for new in news %}
                 <div class="col s12 m6">
                     <div class="card">
-                        <div class="card-image">
-                            <span class="card-title" id="title-pad">{{ genre.name.capitalize() }}</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light green"><i
-                                class="fas fa-plus-circle"></i></a>
-                        </div>
                         <div class="card-content">
-                            <p>{{ genre.description }}</p>
+                            <span class="card-title">{{ new.title.title() }}</span>
+                            <p>{{ new.text.capitalize() }}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="green-text text-darken-2" >More by {{ new.created_by.title() }}</a>
+                            <a href="#" class="card-action-right green-text text-darken-2">More About {{ new.game.title() }}</a>
                         </div>
                     </div>
                 </div>
