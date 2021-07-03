@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <div class="container">
+
+        <!-- genre cards -->
+        <div class="row">
+            <h2 class="center-align green-text text-darken-2">All Genres</h2>
+            {% for genre in genres %}
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <span class="card-title" id="title-pad">{{ genre.name.capitalize() }}</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light green"><i
+                                class="fas fa-plus-circle"></i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>{{ genre.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    
+    </div>
+
+{% endblock %}

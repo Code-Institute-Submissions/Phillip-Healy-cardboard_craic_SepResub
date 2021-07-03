@@ -26,7 +26,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="{{ url_for('games') }}">Games</a></li>
-                        <li><a href="#">Categories</a></li>
+                        <li><a href="{{ url_for('genres') }}">Genres</a></li>
                         <li><a href="#">News</a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('logout') }}">Log out</a></li>
@@ -47,7 +47,7 @@
             </li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('games') }}">Games</a></li>
-            <li><a href="#">Categories</a></li>
+            <li><a href="{{ url_for('genres') }}">Genres</a></li>
             <li><a href="#">News</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('logout') }}">Log out</a></li>
@@ -79,7 +79,6 @@
     {% endblock %}
 
     <footer class="page-footer green darken-2">
-        <div class="container">
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Cardboard Craic</h5>
@@ -97,7 +96,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
         <div class="footer-copyright">
             <div class="container">
                 © 2021 Copyright Hammock Software Games. All Rights Reserved.

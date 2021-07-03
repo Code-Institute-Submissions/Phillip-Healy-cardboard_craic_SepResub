@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 def index():
     news = list(mongo.db.news.find())
     games = list(mongo.db.games.find().limit( 3 ))
-    return render_template("index.html", news=news, games=games, user=user)
+    return render_template("index.html", news=news, games=games)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -116,6 +116,12 @@ def delete_task(task_id):
 def games():
     games = list(mongo.db.games.find())
     return render_template("games.html", games=games)
+
+
+@app.route("/genres")
+def genres():
+    genres = list(mongo.db.genres.find())
+    return render_template("genres.html", genres=genres)
 
 
 if __name__ == "__main__":

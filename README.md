@@ -87,9 +87,19 @@ For the font I chose Poppins; a free Google Font. Poppins is an internationalist
 ## Features
 
 ### Existing Features
+- A front page featuring latest news and spotlights on top 3 games.
+- A page to see all games that have been reviewed on the site.
+- A genres page to see the games in each genre.
+- A review page to see each review.
+- A log in/register page to become a user of the site.
+- A profile page to show the reviews you've already left and allow you to edit/delete them.
+- A form to add games, and reviews for those games.
+- A logout button to see the site as a non-registered user or if you computer share etc.
 
 ### Future Features
-
+- Affinity links on the games to earn money for site upkeep/future projects.
+- Have search bar for games, genres, reviews based on different terms.
+- Link to all games of a certain genre etc. when a user clicks on it.
 
 ## Technologies Used
 
@@ -142,6 +152,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
  I had put in a conflicting position value for the button vs the text, fixing this using an id resolved the issue!
 - continually getting "werkzeug.routing.BuildError: Could not build url for endpoint 'register'. Did you mean 'index' instead?" error. have looked through code on each page as well as app.py. Can't see any errors that would cause this. 
  Turns out I had my __main__ above the register decorator so it was failing to call.
+- Had the footer on profile page split in a strange way looking sloppy. Found an unclosed div that was causing this.
+
 
 ## Deployment
 
