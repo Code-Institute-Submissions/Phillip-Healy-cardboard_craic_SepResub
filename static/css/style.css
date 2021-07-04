@@ -40,7 +40,10 @@ a.back-to-top {
 /* --------------------------- Add button  */
 
 .add-btn {
-    float: left;
+    padding: 10px;
+    height: 35px;
+    line-height: 28px;
+    display: revert;
 }
 
 /* --------------------------- content adjustments */
@@ -55,9 +58,8 @@ a.back-to-top {
     padding: 4px
 }
 
-.card-content {
-    min-height: 140px;
-    margin-bottom: 50px
+#game-content {
+    padding: 6px;
 }
 
 #profile-title {
@@ -74,6 +76,10 @@ a.back-to-top {
 
 .games {
     margin-bottom: 15px;
+}
+
+.game-card {
+    height: 500px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -95,13 +101,6 @@ a.back-to-top {
 
     .card-action {
         text-align: center;
-    }
-
-    .add-btn {
-        float: none;
-        padding: 5px;
-        height: 35px;
-        display: revert;
     }
 
     .mob-title {

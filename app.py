@@ -120,7 +120,8 @@ def add_game():
             "genre": request.form.get("genre"),
             "description": request.form.get("description"),
             "img_url": request.form.get("img_url"),
-            "affiliate_link": request.form.get("img_url")
+            "affiliate_link": request.form.get("img_url"),
+            "date": datetime.now()
         }
         mongo.db.games.insert_one(game)
         flash("Game Successfully Added")
@@ -140,6 +141,31 @@ def genres():
 def news():
     news = list(mongo.db.news.find())
     return render_template("news.html", news=news)
+
+
+@app.route("/reviews")
+def reviews():
+    reviews = list(mongo.db.reviews.find())
+    return render_template("reviews.html", reviews=reviews)
+
+
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+            "game": request.form.get("game"),
+            "genre": request.form.get("genre"),
+            "content": request.form.get("content"),
+            "created_by": session["user"],
+            "date": datetime.now()
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Review Successfully Added")
+        return redirect(url_for("reviews"))
+
+    games = mongo.db.games.find().sort("name", 1)
+    genres = mongo.db.genres.find().sort("name", 1)
+    return render_template("add_review.html", genres=genres, games=games)
 
 
 if __name__ == "__main__":
