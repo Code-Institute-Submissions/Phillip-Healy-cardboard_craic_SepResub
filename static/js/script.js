@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('.sidenav').sidenav();
+    $('select').formSelect();
 
     var amountScrolled = 30;
 

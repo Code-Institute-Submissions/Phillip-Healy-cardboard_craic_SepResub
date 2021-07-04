@@ -2,6 +2,7 @@
 {% block content %}
     <div class="container">
         <h3 class="white-text green darken-2">Add Game</h3>
+        <hr>
 
         <div class="row card-panel grey lighten-5">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_game') }}">
@@ -9,7 +10,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-folder-open prefix green-text text-darken-2"></i>
-                        <select id="genre" name="genre" class="validate" required>
+                        <select id="genre" name="genre" class="validate">
                             <option value="" disabled selected>Choose Genre</option>
                                 {% for genre in genres %}
                                     <option value="{{ genre.name }}">{{ genre.name.capitalize() }}</option>

@@ -59,9 +59,10 @@ def profile(username):
         {"username": session["user"]})["username"]
     # gather list of reviews by user
     reviews = list(mongo.db.reviews.find(
-        { "created_by": session["user"]}))
+        {"created_by": session["user"]}))
     if session["user"]:
-        return render_template("profile.html", username=username, reviews=reviews)
+        return render_template(
+            "profile.html", username=username, reviews=reviews)
 
     return redirect(url_for("login"))
 
@@ -99,17 +100,10 @@ def login():
 
 @app.route("/logout")
 def logout():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-
-
-@app.route("/delete_review/<review_id>")
-def delete_task(task_id):
-    mongo.db.review.remove({"_id": ObjectId(review_id)})
-    flash("Review Successfully Deleted")
-    return redirect(url_for("profile.html", username=username, reviews=reviews))
 
 
 @app.route("/games")

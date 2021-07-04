@@ -156,6 +156,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
 - Card action links were crowding each other. Align-right class wasn't working, used float: right on a custom class and this tidied it up.
 - Genre titles were overlapping cards above them in mobile view. Applying margin to title card didn't work, possibly as position was offset. Applying just the right margin 
  to lower card helped space it out nicely.
+ - Add game form has blank select input that I can't focus or change, making the form non submitable. Putting in even the most basic select/options was coming 
+  up blank. Started form from scratch and found I had initialized the JQuery incorrectly. Select now working as intended.
 
 ## Deployment
 

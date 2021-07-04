@@ -37,6 +37,12 @@ a.back-to-top {
 	border-radius: 30px;
 }
 
+/* --------------------------- Add button  */
+
+.add-btn {
+    float: left;
+}
+
 /* --------------------------- content adjustments */
 
 .card-title {
@@ -89,5 +95,16 @@ a.back-to-top {
 
     .card-action {
         text-align: center;
+    }
+
+    .add-btn {
+        float: none;
+        padding: 5px;
+        height: 35px;
+        display: revert;
+    }
+
+    .mob-title {
+        margin-top: 0px;
     }
 }
