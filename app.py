@@ -126,7 +126,7 @@ def add_game():
             "genre": request.form.get("genre"),
             "description": request.form.get("description"),
             "img_url": request.form.get("img_url"),
-            "affiliate_link": affiliate_link
+            "affiliate_link": request.form.get("img_url")
         }
         mongo.db.games.insert_one(game)
         flash("Game Successfully Added")
