@@ -144,6 +144,26 @@ def news():
     return render_template("news.html", news=news)
 
 
+@app.route("/add_news", methods=["GET", "POST"])
+def add_news():
+    if request.method == "POST":
+        new = {
+            "game": request.form.get("game"),
+            "genre": request.form.get("genre"),
+            "title": request.form.get("title"),
+            "text": request.form.get("text"),
+            "created_by": session["user"],
+            "date": datetime.now()
+        }
+        mongo.db.news.insert_one(new)
+        flash("News Successfully Added")
+        return redirect(url_for("news"))
+
+    games = mongo.db.games.find().sort("name", 1)
+    genres = mongo.db.genres.find().sort("name", 1)
+    return render_template("add_news.html", genres=genres, games=games)
+
+
 @app.route("/reviews")
 def reviews():
     reviews = list(mongo.db.reviews.find())

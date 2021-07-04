@@ -158,7 +158,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
  to lower card helped space it out nicely.
  - Add game form has blank select input that I can't focus or change, making the form non submitable. Putting in even the most basic select/options was coming 
   up blank. Started form from scratch and found I had initialized the JQuery incorrectly. Select now working as intended.
-
+- jinja2.exceptions.UndefinedError: 'None' has no attribute 'capitalize' after building add_news page. A test entry in the DB had a 
+ null value that was causing the traceback error. Fixed that but correcting data in DB.
 ## Deployment
 
 1. Create repo "cardboard_craic" on Github based on Code-institute template.
