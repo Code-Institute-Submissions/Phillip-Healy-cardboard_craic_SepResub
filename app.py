@@ -118,6 +118,24 @@ def games():
     return render_template("games.html", games=games)
 
 
+@app.route("/add_game", methods=["GET", "POST"])
+def add_game():
+    if request.method == "POST":
+        game = {
+            "name": request.form.get("name"),
+            "genre": request.form.get("genre"),
+            "description": request.form.get("description"),
+            "img_url": request.form.get("img_url"),
+            "affiliate_link": affiliate_link
+        }
+        mongo.db.games.insert_one(game)
+        flash("Game Successfully Added")
+        return redirect(url_for("games"))
+
+    genres = mongo.db.genres.find().sort("name", 1)
+    return render_template("add_game.html", genres=genres)
+
+
 @app.route("/genres")
 def genres():
     genres = list(mongo.db.genres.find())

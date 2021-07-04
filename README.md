@@ -200,7 +200,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ## Credits
 
 ### Content
+- Back to top button modified from code taken from https://www.templatemonster.com/blog/back-to-top-button-css-jquery/
 
 ### Media
-
+- Boardgame images taken from the original boxart as displayed on https://www.boardgamegeek.com/
 ### Acknowledgements
