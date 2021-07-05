@@ -203,6 +203,13 @@ def delete_genre(genre_id):
     return redirect(url_for("genres"))
 
 
+@app.route("/search_genre", methods=["GET", "POST"])
+def search_genre():
+    query = request.form.get("query")
+    genres = list(mongo.db.genres.find({"$text": {"$search": query}}))
+    return render_template("genres.html", genres=genres)
+
+
 @app.route("/news")
 def news():
     news = list(mongo.db.news.find())
