@@ -2,22 +2,20 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    padding-bottom: 200px;
+    padding: 0;
 }
 
-main {
-    flex: 1 0 auto;
-  }
+#main-window {
+    min-height: calc(100vh - 200px);
+}
+
+#footer {
+    height: 200px;
+}
 
 .page-footer {
     padding-top: 20px;
     color: #fff;
-    height: 200px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
@@ -136,5 +134,9 @@ a.back-to-top {
     .game-card {
         height: auto;
         min-height: 80px;
+    }
+
+    #footer {
+        height: auto;
     }
 }

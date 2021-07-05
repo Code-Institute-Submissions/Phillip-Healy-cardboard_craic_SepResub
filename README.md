@@ -162,7 +162,12 @@ Application Framework or a simply a Web Framework represents a collection of lib
  null value that was causing the traceback error. Fixed that but correcting data in DB.
 - Had the add buttons on each page regardless of user logged in, this caused an error if you tried submitting anything as "created_by" is recorded using session user, 
  and if you're not logged in there is no session user. An if statement fixed this.
-- Default text on registration page spilling over line on mobile view. 
+- Default text on registration page spilling over line on mobile view. Reduced text size on mobile viewport of these elements to compensate for this.
+- Footer was hanging in middle v-align on pages without much content. Flex and height: 100vh were supposed to eliminate this but didn't work. Creating containers 
+ for header, body, and footer and making position of footer absolute helped, but left some overhang at bottom. Went through a dozen sites like stack overflow 
+ and csswizard to try find a sollution and none were working on mobile and tablet and PC. Finally came across a sollution that calculated the window height minus
+ the footer height which worked on all devices! http://martinpennock.com/blog/force-footer-bottom-page-css/ 
+
 
 ## Deployment
 
