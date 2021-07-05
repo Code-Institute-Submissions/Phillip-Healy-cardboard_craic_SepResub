@@ -22,8 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    news = list(mongo.db.news.find().sort("date", 1).limit( 1 ))
-    games = list(mongo.db.games.find().limit( 3 ))
+    news = list(mongo.db.news.find().sort("date", 1).limit(1))
+    games = list(mongo.db.games.find().limit(3))
     return render_template("index.html", news=news, games=games)
 
 
@@ -201,6 +201,33 @@ def add_review():
     games = mongo.db.games.find().sort("name", 1)
     genres = mongo.db.genres.find().sort("name", 1)
     return render_template("add_review.html", genres=genres, games=games)
+
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        submit = {
+            "game": request.form.get("game"),
+            "genre": request.form.get("genre"),
+            "content": request.form.get("content"),
+            "date": datetime.now(),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Successfully Updated")
+       
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    games = mongo.db.games.find().sort("name", 1)
+    genres = mongo.db.genres.find().sort("name", 1)
+    return render_template("edit_review.html", review=review, games=games, genres=genres)
+
+
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.review.remove({"_id": ObjectId(review_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("reviews"))
 
 
 if __name__ == "__main__":

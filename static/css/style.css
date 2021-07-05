@@ -80,10 +80,17 @@ a.back-to-top {
 
 .game-card {
     height: 500px;
+    overflow: auto;
 }
 
 .genre-card {
     height: 160px;
+    overflow: auto;
+}
+
+.edit-btn {
+    float: right;
+    padding: 4px;
 }
 
 @media only screen and (max-width: 992px) {
