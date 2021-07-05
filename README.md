@@ -167,6 +167,7 @@ Application Framework or a simply a Web Framework represents a collection of lib
  for header, body, and footer and making position of footer absolute helped, but left some overhang at bottom. Went through a dozen sites like stack overflow 
  and csswizard to try find a sollution and none were working on mobile and tablet and PC. Finally came across a sollution that calculated the window height minus
  the footer height which worked on all devices! http://martinpennock.com/blog/force-footer-bottom-page-css/ 
+- News card was very large with too much white space. Fixed this to be small until clicked when the news would fill the cell.
 
 
 ## Deployment
@@ -208,6 +209,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
 18. Wait to see this light up green. 
 
 19. You can now "Open App" and will see the test page you created.
+
+20. Live app:  https://cardboardcraic.herokuapp.com/
 
 ## Credits
 
