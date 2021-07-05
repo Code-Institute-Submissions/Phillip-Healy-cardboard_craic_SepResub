@@ -82,6 +82,10 @@ a.back-to-top {
     height: 500px;
 }
 
+.genre-card {
+    height: 160px;
+}
+
 @media only screen and (max-width: 992px) {
     #mobile-logo {
         left: 15%;
@@ -110,6 +114,5 @@ a.back-to-top {
     .game-card {
         height: auto;
         min-height: 80px;
-        max-height: 500px;
     }
 }
