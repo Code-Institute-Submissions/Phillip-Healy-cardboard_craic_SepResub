@@ -122,6 +122,7 @@ def add_game():
             "description": request.form.get("description"),
             "img_url": request.form.get("img_url"),
             "affiliate_link": request.form.get("img_url"),
+            "created_by": session["user"],
             "date": datetime.now()
         }
         mongo.db.games.insert_one(game)
@@ -141,15 +142,23 @@ def edit_game(game_id):
             "description": request.form.get("description"),
             "img_url": request.form.get("img_url"),
             "affilliate_link": request.form.get("affilliate_link"),
-            "date": datetime.now(),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "date": datetime.now()
         }
         mongo.db.games.update({"_id": ObjectId(game_id)}, submit)
         flash("Game Successfully Updated")
+        return redirect(url_for("games"))
 
-    games = mongo.db.games.find().sort("name", 1)
+    game = mongo.db.games.find_one({"_id": ObjectId(game_id)})
     genres = mongo.db.genres.find().sort("name", 1)
-    return render_template("edit_game.html", games=games, genres=genres)
+    return render_template("edit_game.html", game=game, genres=genres)
+
+
+@app.route("/delete_game/<game_id>")
+def delete_game(game_id):
+    mongo.db.game.remove({"_id": ObjectId(game_id)})
+    flash("Game Successfully Deleted")
+    return redirect(url_for("games"))
 
 
 @app.route("/genres")
@@ -235,8 +244,7 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Updated")
-        return redirect(url_for("reviews"))
-       
+        return redirect(url_for("reviews"))       
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     games = mongo.db.games.find().sort("name", 1)
