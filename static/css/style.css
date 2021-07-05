@@ -31,6 +31,10 @@ body {
     height: 100%;
 }
 
+#news-card {
+    height: auto;
+}
+
 /* ----------------------------- Back to top button  */
 
 a.back-to-top {
