@@ -5,17 +5,32 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    padding-bottom: 200px;
 }
 
 main {
     flex: 1 0 auto;
   }
 
+.page-footer {
+    padding-top: 20px;
+    color: #fff;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 .footer-media li {
     font-size: 28px;
     float: left;
     background-position: right;
     margin-right: 12px;
+}
+
+.container {
+    position: relative;
+    height: 100%;
 }
 
 /* ----------------------------- Back to top button  */
