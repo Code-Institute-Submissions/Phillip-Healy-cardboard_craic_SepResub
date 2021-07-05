@@ -79,7 +79,7 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(
                         request.form.get("username")))
@@ -156,7 +156,7 @@ def edit_game(game_id):
 
 @app.route("/delete_game/<game_id>")
 def delete_game(game_id):
-    mongo.db.game.remove({"_id": ObjectId(game_id)})
+    mongo.db.games.remove({"_id": ObjectId(game_id)})
     flash("Game Successfully Deleted")
     return redirect(url_for("games"))
 
@@ -244,12 +244,13 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Updated")
-        return redirect(url_for("reviews"))       
+        return redirect(url_for("reviews"))
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     games = mongo.db.games.find().sort("name", 1)
     genres = mongo.db.genres.find().sort("name", 1)
-    return render_template("edit_review.html", review=review, games=games, genres=genres)
+    return render_template("edit_review.html",
+                           review=review, games=games, genres=genres)
 
 
 @app.route("/delete_review/<review_id>")
@@ -261,5 +262,5 @@ def delete_review(review_id):
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")),
-    debug=True)
+            port=int(os.environ.get("PORT")),
+            debug=True)

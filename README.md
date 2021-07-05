@@ -168,7 +168,8 @@ Application Framework or a simply a Web Framework represents a collection of lib
  and csswizard to try find a sollution and none were working on mobile and tablet and PC. Finally came across a sollution that calculated the window height minus
  the footer height which worked on all devices! http://martinpennock.com/blog/force-footer-bottom-page-css/ 
 - News card was very large with too much white space. Fixed this to be small until clicked when the news would fill the cell.
-
+- Kept getting PEP8 compliance errors for under-indented second lines. After a lot of trial and error I finally found the right level 
+ of indentation for each part using http://pep8online.com/
 
 ## Deployment
 
