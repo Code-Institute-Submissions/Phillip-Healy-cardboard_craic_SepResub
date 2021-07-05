@@ -138,6 +138,20 @@ def genres():
     return render_template("genres.html", genres=genres)
 
 
+@app.route("/add_genre", methods=["GET", "POST"])
+def add_genre():
+    if request.method == "POST":
+        genre = {
+            "name": request.form.get("name"),
+            "description": request.form.get("description")
+        }
+        mongo.db.genres.insert_one(genre)
+        flash("Genre Successfully Added")
+        return redirect(url_for("genres"))
+
+    return render_template("add_genre.html")
+
+
 @app.route("/news")
 def news():
     news = list(mongo.db.news.find())

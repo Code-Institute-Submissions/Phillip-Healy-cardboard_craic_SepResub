@@ -106,4 +106,10 @@ a.back-to-top {
     .mob-title {
         margin-top: 0px;
     }
+
+    .game-card {
+        height: auto;
+        min-height: 80px;
+        max-height: 500px;
+    }
 }

@@ -160,6 +160,9 @@ Application Framework or a simply a Web Framework represents a collection of lib
   up blank. Started form from scratch and found I had initialized the JQuery incorrectly. Select now working as intended.
 - jinja2.exceptions.UndefinedError: 'None' has no attribute 'capitalize' after building add_news page. A test entry in the DB had a 
  null value that was causing the traceback error. Fixed that but correcting data in DB.
+- Had the add buttons on each page regardless of user logged in, this caused an error if you tried submitting anything as "created_by" is recorded using session user, 
+ and if you're not logged in there is no session user. An if statement fixed this.
+
 ## Deployment
 
 1. Create repo "cardboard_craic" on Github based on Code-institute template.

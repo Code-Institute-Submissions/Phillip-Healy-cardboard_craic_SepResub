@@ -7,16 +7,17 @@
                 <h2 class="center-align green-text text-darken-2">
                     All Genres
                 </h2>
+                {% if session.user %}
+                    <a href="{{ url_for('add_genre') }}" class="btn-large add-btn white-text green darken-2">Add A Genre</a>
+                {% endif %}
                 <hr>
             </div>
              <!-- genre cards -->
             {% for genre in genres %}
                 <div class="col s12 m6">
                     <div class="card">
-                        <div class="card-image">
+                        <div>
                             <span class="card-title" id="title-pad">{{ genre.name.capitalize() }}</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light green"><i
-                                class="fas fa-plus-circle"></i></a>
                         </div>
                         <div class="card-content">
                             <p>{{ genre.description }}</p>

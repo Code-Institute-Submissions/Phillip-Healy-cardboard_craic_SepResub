@@ -6,7 +6,9 @@
         <!-- game cards -->
         <div class="row">
             <h2 class="center-align mob-title green-text text-darken-2">All Games</h2>
-            <a href="{{ url_for('add_game') }}" class="btn-large add-btn white-text green darken-2">Add Game</a>
+            {% if session.user %}
+                <a href="{{ url_for('add_game') }}" class="btn-large add-btn white-text green darken-2">Add Game</a>
+            {% endif %}
             <hr>
             {% for game in games %}
                 <div class="col s12 m4">

@@ -5,18 +5,18 @@
 
         <!-- reviews cards -->
         <div class="row">
-            <div class="col s12 m12">
-                <h2 class="center-align mob-title green-text text-darken-2">All Reviews</h2>
-                    <a href="{{ url_for('add_review') }}" class="btn-large add-btn white-text green darken-2">Add Your Review</a>
-                <hr>
-            </div>
+            <h2 class="center-align mob-title green-text text-darken-2">All Reviews</h2>
+            {% if session.user %}
+                <a href="{{ url_for('add_review') }}" class="btn-large add-btn white-text green darken-2">Add Your Review</a>
+            {% endif %}
+            <hr>
             {% for review in reviews %}
                 <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
+                    <div class="card game-card">
+                        <div>
                             <span class="card-title" id="title-pad">{{ review.game.title() }}</span>
                         </div>
-                        <div class="card-content">
+                        <div class="card-content" id="game-content">
                             <p>{{ review.content }}</p>
                         </div>
                     </div>
