@@ -136,9 +136,9 @@ Application Framework or a simply a Web Framework represents a collection of lib
 - Most recently created news item shows under logo.
 - 3 most recently created games populate showcase.
 - users can navigate to all other pages via nav.
-- news is navigable via 
+- news is navigable via "go to news feed" link.
 ### Registration
-
+- 
 ### Log in/out
 
 ### Access Control
