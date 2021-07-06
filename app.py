@@ -161,6 +161,13 @@ def delete_game(game_id):
     return redirect(url_for("games"))
 
 
+@app.route("/search_game", methods=["GET", "POST"])
+def search_game():
+    query = request.form.get("query")
+    games = list(mongo.db.games.find({"$text": {"$search": query}}))
+    return render_template("games.html", games=games)
+
+
 @app.route("/genres")
 def genres():
     genres = list(mongo.db.genres.find())
