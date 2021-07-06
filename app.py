@@ -296,6 +296,13 @@ def delete_review(review_id):
     return redirect(url_for("reviews"))
 
 
+@app.route("/search_review", methods=["GET", "POST"])
+def search_review():
+    query = request.form.get("query")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", reviews=reviews)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
