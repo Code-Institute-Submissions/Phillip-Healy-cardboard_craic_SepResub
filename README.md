@@ -1,7 +1,6 @@
 # Cardboard Craic
 Phillip Healy's Milestone Project 3: Data-centric full stack site.
-Cardboard Craic is a site for all things boardgame related. Register to leave a review of a game you love or hate, check out news about what's going on in 
-the world of boardgames!
+Cardboard Craic is a site for all things boardgame related. Register to leave a review of a game you love or hate, check out news to see what is going on in the world of boardgames!
 
 ## Brief
 
@@ -76,6 +75,8 @@ A project violating any of these requirements will FAIL
 
 [Wireframes](wireframes/cardboardcraic.pdf)
 
+[Schema](/assets/images/schema-2.1.png)
+
 I chose to have the site be open and clean to have a great user experience. Keeping focus on the content the user has come for, while providing easy navigation
  to and from every part of the site. I went with a healthy green colour which is traditionally associated with the environment and success.
 
@@ -94,11 +95,11 @@ For the font I chose Poppins; a free Google Font. Poppins is an internationalist
 - A log in/register page to become a user of the site.
 - A profile page to show the reviews you've already left and allow you to edit/delete them.
 - A form to add games, and reviews for those games.
+- Have search bar for games, genres, reviews based on different terms.
 - A logout button to see the site as a non-registered user or if you computer share etc.
 
 ### Future Features
 - Affinity links on the games to earn money for site upkeep/future projects.
-- Have search bar for games, genres, reviews based on different terms.
 - Link to all games of a certain genre etc. when a user clicks on it.
 
 ## Technologies Used
@@ -132,7 +133,10 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ## Testing
 
 ### Home Page
-
+- Most recently created news item shows under logo.
+- 3 most recently created games populate showcase.
+- users can navigate to all other pages via nav.
+- news is navigable via 
 ### Registration
 
 ### Log in/out
@@ -217,7 +221,10 @@ Application Framework or a simply a Web Framework represents a collection of lib
 
 ### Content
 - Back to top button modified from code taken from https://www.templatemonster.com/blog/back-to-top-button-css-jquery/
+Window height calculations modified from http://martinpennock.com/blog/force-footer-bottom-page-css/
 
 ### Media
 - Boardgame images taken from the original boxart as displayed on https://www.boardgamegeek.com/
+- Page logo designed and created by me on https://sketch.io/sketchpad/
+- Schema created on https://draw.io/app.diagrams/
 ### Acknowledgements

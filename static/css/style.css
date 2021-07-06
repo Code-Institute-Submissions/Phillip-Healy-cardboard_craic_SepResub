@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+/*  Window height calculations modified from http://martinpennock.com/blog/force-footer-bottom-page-css/ */
 #main-window {
     min-height: calc(100vh - 200px);
 }
