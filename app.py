@@ -22,8 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    news = list(mongo.db.news.find().sort("date", 1).limit(1))
-    games = list(mongo.db.games.find().sort("date", 1).limit(3))
+    news = list(mongo.db.news.find().sort("date", -1).limit(1))
+    games = list(mongo.db.games.find().sort("date", -1).limit(3))
     return render_template("index.html", news=news, games=games)
 
 
@@ -179,7 +179,8 @@ def add_genre():
     if request.method == "POST":
         genre = {
             "name": request.form.get("name"),
-            "description": request.form.get("description")
+            "description": request.form.get("description"),
+            "created_by": session["user"]
         }
         mongo.db.genres.insert_one(genre)
         flash("Genre Successfully Added")
@@ -193,7 +194,8 @@ def edit_genre(genre_id):
     if request.method == "POST":
         submit = {
             "name": request.form.get("name"),
-            "description": request.form.get("description")
+            "description": request.form.get("description"),
+            "created_by": session["user"]
         }
         mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genre Successfully Updated")

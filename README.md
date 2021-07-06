@@ -135,19 +135,52 @@ Application Framework or a simply a Web Framework represents a collection of lib
 ### Home Page
 - Most recently created news item shows under logo.
 - 3 most recently created games populate showcase.
-- users can navigate to all other pages via nav.
-- news is navigable via "go to news feed" link.
+- Users can navigate to all other pages via nav.
+- News is navigable via "go to news feed" link.
+- Page heading disappears on mobile view to save screen space.
+- All cards snap into position on mobile view to streamline page.
 ### Registration
-- 
+- Username/password requirements are present even when form element is focused.
+- Trying to leave either element blank gets a warning asking to fill it out.
+- Trying incorrect data types, or incorrect character count in either field gets an error
+ asking to please match requirements.
+- Can navigate to all pages from nav, or to login if already registered via "login here".
 ### Log in/out
+- username password label visible even when form element is focused.
+- Trying to leave either element blank gets a warning asking to fill it out.
+- Entering either incorrect username and/or password gets error message without identifying which is
+ incorrect for security.
+- Can navigate to all pages from nav, or to register if not already registered via "register account".
 
 ### Access Control
+- Trying to leave either username or password blank gets a warning asking to fill it out.
+- Trying incorrect data types, or incorrect character count in either field gets an error
+ asking to please match requirements.
+- Entering either incorrect username and/or password gets error message without identifying which is
+ incorrect for security.
+- Can only add data to the site if you are logged in.
+- Each card can only be edited/deleted by the user who created it while they are logged in. Or by an admin on the database.
 
 ### Games
+- Search bar propperly searches through all fields for matching data to query. 
+- Search function returns "No matching data" and allows users to reset page or search again.
+- All cards present for all users, but edit/delete buttons only present for user who created that game.
+- Cards uniform in size regardless of image and text combo size. Overflow creates a scoll bar only when needed.
 
 ### Genres
+- Search bar propperly searches through all fields for matching data to query. 
+- Search function returns "No matching data" and allows users to reset page or search again.
+- All cards present for all users, but edit/delete buttons only present for user who created that genre.
+- Cards uniform in size regardless of text size.
+- Text limit on "add genre" prevents cards having overflow.
 
-### Support
+### Reviews
+- Search bar propperly searches through all fields for matching data to query. 
+- Search function returns "No matching data" and allows users to reset page or search again.
+- All cards present for all users, but edit/delete buttons only present for user who created that genre.
+- Cards uniform in size regardless of text size. Overflow creates a scoll bar only when needed.
+
+### News
 
 ### Bugs Encountered
 - When building the nav bar the logo was overflowing bellow the header with materialize template. This looked sloppy so I applied an id and style to it just for mobile to fix it.
@@ -166,7 +199,9 @@ Application Framework or a simply a Web Framework represents a collection of lib
  null value that was causing the traceback error. Fixed that but correcting data in DB.
 - Had the add buttons on each page regardless of user logged in, this caused an error if you tried submitting anything as "created_by" is recorded using session user, 
  and if you're not logged in there is no session user. An if statement fixed this.
-- Default text on registration page spilling over line on mobile view. Reduced text size on mobile viewport of these elements to compensate for this.
+- Default text on registration page spilling over line on mobile view. Reduced text size on mobile viewport of these elements to compensate 
+ for this.
+- News items were having overhanging elements. Having creator info in a p was causing this. Switching to span fixed it
 - Footer was hanging in middle v-align on pages without much content. Flex and height: 100vh were supposed to eliminate this but didn't work. Creating containers 
  for header, body, and footer and making position of footer absolute helped, but left some overhang at bottom. Went through a dozen sites like stack overflow 
  and csswizard to try find a sollution and none were working on mobile and tablet and PC. Finally came across a sollution that calculated the window height minus
@@ -227,4 +262,6 @@ Window height calculations modified from http://martinpennock.com/blog/force-foo
 - Boardgame images taken from the original boxart as displayed on https://www.boardgamegeek.com/
 - Page logo designed and created by me on https://sketch.io/sketchpad/
 - Schema created on https://draw.io/app.diagrams/
+
 ### Acknowledgements
+Thank you to my wife and friends who tested the site during development.
